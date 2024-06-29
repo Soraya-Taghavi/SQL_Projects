@@ -11,7 +11,9 @@ SELECT
 FROM 
   Teca.teca
 GROUP BY
-  site_name;
+  site_name
+ORDER BY
+  total_revenue DESC;
 
 --- 2. Which 3 product category generates the highest revenue?
 SELECT 
@@ -80,7 +82,7 @@ GROUP BY
 HAVING 
   AVG(revenue) != 0
 ORDER BY
-  2 DESC;
+  2 ;
 
 ---4. What are the top 5 products with the highest gross profit?
 
@@ -100,7 +102,7 @@ LIMIT
 ---1. Which site has the highest number of transactions?
 SELECT
   site_name,
-  COUNT(DISTINCT transaction_id) as number_of_transactions
+  COUNT(transaction_id) as number_of_transactions
 FROM 
   Teca.teca
 GROUP BY
@@ -254,7 +256,7 @@ ORDER BY
   2 DESC;
 
 
----4.	What is the relationship between parent categories and their respective categories in terms of revenue?
+---4. What is the relationship between parent categories and their respective categories in terms of revenue?
 
 SELECT
   parent_name,
@@ -268,6 +270,8 @@ GROUP BY
 ORDER BY
   parent_name,
   Avg_revenue DESC;
+
+
 
 
 
